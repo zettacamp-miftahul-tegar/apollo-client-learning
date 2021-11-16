@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 import { SubSink } from 'subsink';
 
@@ -19,7 +20,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -36,6 +38,9 @@ export class LoginComponent implements OnInit {
     const payload: Payload = this.loginForm.value;
     this.subs.sink = this.authService.loginUser(payload.email, payload.password).subscribe(resp => {
       console.log(resp);
+      if (resp) {
+        this.router.navigate(['/home']);
+      }
     })
   }
 

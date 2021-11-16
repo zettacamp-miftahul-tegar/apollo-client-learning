@@ -19,7 +19,7 @@ export class AuthGuard implements CanActivate {
         return true;
       } else {
         // Force Logout if there is no token
-        this.router.navigate(['/session/login'], { queryParams: { returnUrl: state.url } });
+        this.router.navigate(['/login']);
         return false;
       }
   }
