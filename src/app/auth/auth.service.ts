@@ -21,14 +21,15 @@ export class AuthService {
       `
       }).pipe(
         map((resp) => {
-          this.userLogin(resp);
+          this.userLogin(resp.data);
           return resp;
         }),
       );
   }
 
-  userLogin(resp: any) {
-    localStorage.setItem(environment.tokenKey, JSON.stringify(resp.token));
+  userLogin(data: any) {
+    console.log(data);
+    localStorage.setItem(environment.tokenKey, JSON.stringify(data.Login.token));
   }
 
   logOut() {
