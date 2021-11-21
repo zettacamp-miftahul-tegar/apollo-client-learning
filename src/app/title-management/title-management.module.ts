@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { TitleManagementRoutingModule } from './title-management-routing.module';
 import { TitleCardListComponent } from './title-card-list/title-card-list.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { TitleCardListComponent } from './title-card-list/title-card-list.compon
   ],
   imports: [
     CommonModule,
+    SharedModule,
     TitleManagementRoutingModule
   ]
 })
