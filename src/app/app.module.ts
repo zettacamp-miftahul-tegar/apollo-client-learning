@@ -35,6 +35,11 @@ const appRoutes: Routes = [
     loadChildren: () => import('./users-management/users-management.module').then((m) => m.UsersManagementModule),
     canActivate: [AuthGuard],
   },
+  {
+    path: 'promo',
+    loadChildren: () => import('./promo-management/promo-management.module').then((m) => m.PromoManagementModule),
+    canActivate: [AuthGuard],
+  },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ]
 
