@@ -35,7 +35,7 @@ const appRoutes: Routes = [
     loadChildren: () => import('./users-management/users-management.module').then((m) => m.UsersManagementModule),
     canActivate: [AuthGuard],
   },
-  { path: '**', redirectTo: 'login', pathMatch: 'full' },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ]
 
 
